@@ -6,7 +6,7 @@ books = [os.path.splitext(book) for book in os.listdir(path="books") if os.path.
 def is_invalid_num(num):
     # try обрабатывает ошибки(int("a") - вызовет ошибку, т.к. "a" не число)
     try:
-         return False if 1 <= int(book_to_show) <= len(books) else True
+        return 1 >= int(book_to_show) >= len(books)
     except Exception:
         return True
 
@@ -37,7 +37,7 @@ while books:
     
     # продолжать ли работу
     repeat = input("хотите открыть другую книгу(д \ н): ")
-    while repeat != "н" and repeat != "д":
+    while repeat not in "нд":
         repeat = input("символ не был распознан, введите \"н\" или \"д\"")
     
     # ну ты понял
